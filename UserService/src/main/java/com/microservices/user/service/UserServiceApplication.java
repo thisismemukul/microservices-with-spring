@@ -10,4 +10,6 @@ public class UserServiceApplication {
 		SpringApplication.run(UserServiceApplication.class, args);
 	}
 
+	//set application.yml on startup
+
 }
