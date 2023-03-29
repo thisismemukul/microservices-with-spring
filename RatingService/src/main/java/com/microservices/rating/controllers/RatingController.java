@@ -5,9 +5,9 @@ import com.microservices.rating.services.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/ratings")
@@ -18,5 +18,22 @@ public class RatingController {
     public ResponseEntity<Rating> create(@RequestBody Rating rating){
         return ResponseEntity.status(HttpStatus.CREATED).body(ratingService.create(rating));
     }
-    //get All
+
+    //get all
+    @GetMapping
+    public ResponseEntity<List<Rating>> getRatings() {
+        return ResponseEntity.ok(ratingService.getAllRatings());
+    }
+
+    //get all of user
+    @GetMapping("/users/{userId}")
+    public ResponseEntity<List<Rating>> getRatingsByUserId(@PathVariable String userId) {
+        return ResponseEntity.ok(ratingService.getAllRatingsByUserId(userId));
+    }
+
+    //get all of hotels
+    @GetMapping("/hotels/{hotelId}")
+    public ResponseEntity<List<Rating>> getRatingsByHotelId(@PathVariable String hotelId) {
+        return ResponseEntity.ok(ratingService.getAllRatingsByHotelId(hotelId));
+    }
 }
