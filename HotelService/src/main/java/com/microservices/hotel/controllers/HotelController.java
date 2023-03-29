@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/hotels")
 public class HotelController {
@@ -23,5 +25,10 @@ public class HotelController {
         return ResponseEntity.ok(hotel);
     }
     //get all
+    @GetMapping
+    public ResponseEntity<List<Hotel>> getAllHotels(){
+        List<Hotel> allUsers = hotelService.getAll();
+        return ResponseEntity.ok(allUsers);
+    }
 
 }
