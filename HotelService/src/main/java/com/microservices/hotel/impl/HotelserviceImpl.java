@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class HotelserviceImpl implements HotelService {
@@ -16,6 +17,9 @@ public class HotelserviceImpl implements HotelService {
 
     @Override
     public Hotel create(Hotel hotel) {
+        //generate unique userId
+        String randomHotelID = UUID.randomUUID().toString();
+        hotel.setHotelId(randomHotelID);
         return hotelRepository.save(hotel);
     }
 

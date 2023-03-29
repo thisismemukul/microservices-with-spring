@@ -10,7 +10,7 @@ public interface HotelService {
     //getAll
     List<Hotel>getAll();
     //get single
-    Hotel get(String id);
+    Hotel get(String hotelId);
 
     //TODO: delete
 }
