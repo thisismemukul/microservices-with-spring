@@ -8,11 +8,11 @@
 		<version>2.7.10</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.microservices.user.service</groupId>
-	<artifactId>UserService</artifactId>
+	<groupId>com.microservices.hotel</groupId>
+	<artifactId>HotelService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UserService</name>
-	<description>This is User Service</description>
+	<name>HotelService</name>
+	<description>This service is for storing data of Hotels</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

@@ -1,15 +1,13 @@
-package com.microservices.user.service;
+package com.microservices.hotel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserServiceApplication {
+public class HotelServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserServiceApplication.class, args);
+		SpringApplication.run(HotelServiceApplication.class, args);
 	}
-
-	//set application.yml on startup
 
 }
