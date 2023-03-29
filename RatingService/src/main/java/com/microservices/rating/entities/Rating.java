@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,16 +14,18 @@ import javax.persistence.Table;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @Table(name = "micro_user_ratings")
 public class Rating {
     @Id
     @Column(name = "ID")
     private String ratingId;
-    @Column(name="USER ID")
+    @Column(name="USERID")
     private  String userId;
-    @Column(name="HOTEL ID")
+    @Column(name="HOTELID")
     private String hotelId;
     @Column(name="RATING")
     private int rating;
+    @Column(name="FEEDBACK")
     private String feedback;
 }

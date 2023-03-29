@@ -15,7 +15,8 @@ public class RatingController {
     @Autowired
     private RatingService ratingService;
     //create rating
-    public ResponseEntity<Rating> create(@RequestBody Rating rating){
+    @PostMapping
+    public ResponseEntity<Rating> create(@RequestBody Rating rating) {
         return ResponseEntity.status(HttpStatus.CREATED).body(ratingService.create(rating));
     }
 
