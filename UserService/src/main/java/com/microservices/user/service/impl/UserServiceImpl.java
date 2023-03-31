@@ -14,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -46,8 +47,15 @@ public class UserServiceImpl implements UserService {
         //fetch rating of the above user from RATING SERVICE
         //http://localhost:8083/ratings/users/daa20c20-b91f-43f4-81b7-93b198c0c74f
         ArrayList<Rating> ratingsofUser = restTemplate.getForObject("http://localhost:8083/ratings/users/"+user.getUserId(), ArrayList.class);
+
         logger.info("{}",ratingsofUser);
-        user.setRatings(ratingsofUser);
+      List<Rating> ratingList=  ratingsofUser.stream().map(rating -> {
+            //api call to hotel service to get the hotel
+            //set the hotel to rating
+            //return the rating
+            return rating;
+        }).collect(Collectors.toList());
+        user.setRatings(ratingList);
         return user;
     }
 }
