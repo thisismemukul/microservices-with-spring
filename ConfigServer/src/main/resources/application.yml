@@ -4,3 +4,10 @@ server:
 spring:
   application:
     name: CONFIG-SERVER
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/thisismemukul/microservices-with-spring
+          clone-on-start: true
